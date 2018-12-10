@@ -9,6 +9,6 @@ RUN find / -type f -name which
 RUN cd /download/node-v10.14.1 && ./configure && make && make install
 RUN npm install -g yapi-cli
 EXPOSE 3000
-CMD ["yapi", "server "]
+CMD ["/usr/sbin/init"]
 
 #git pull && docker build -t ysll/yapi .
