@@ -7,7 +7,8 @@ RUN cd /download && tar xvf ./node-v10.14.1.tar.gz && ls
 RUN yum install -y make
 RUN find / -type f -name which
 RUN cd /download/node-v10.14.1 && ./configure && make && make install
+RUN npm install -g yapi-cli
+EXPOSE 3000
+CMD ["yapi", "server "]
 
-CMD ["/usr/sbin/init"]
-
-#git push && docker build -t ysll/yapi .
+#git pull && docker build -t ysll/yapi .
