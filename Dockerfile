@@ -10,8 +10,9 @@ RUN cd /download/node-v10.14.1 && ./configure && make && make install
 RUN npm install -g yapi-cli
 EXPOSE 9090 3000
 COPY entrypoint.sh /usr/sbin
-RUN chomd 777 /usr/sbin/entrypoint.sh
+RUN chmod 777 /usr/sbin/entrypoint.sh
 #CMD ["yapi", " server"]
 #CMD ["/usr/sbin/init"]
 ENTRYPOINT '/usr/sbin/entrypoint.sh'
 #git pull && docker build -t ysll/yapi .
+#ENTRYPOINT service tomcat7 start && tail -f /var/lib/tomcat7/logs/catalina.out
