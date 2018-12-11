@@ -12,6 +12,6 @@ EXPOSE 9090 3000
 COPY entrypoint.sh /usr/sbin
 RUN chomd 777 /usr/sbin/entrypoint.sh
 #CMD ["yapi", " server"]
-CMD ["/usr/sbin/init"]
-ENTRYPOINT["/usr/sbin/entrypoint.sh"]
+#CMD ["/usr/sbin/init"]
+ENTRYPOINT '/usr/sbin/entrypoint.sh'
 #git pull && docker build -t ysll/yapi .
