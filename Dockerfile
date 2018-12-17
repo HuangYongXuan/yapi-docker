@@ -5,4 +5,4 @@ RUN mkdir /base && cd /base && git clone https://github.com/YMFE/yapi;
 COPY config.json  /base
 RUN cd /base/yapi && npm i
 
-CMD ["/usr/sbin/init"]
+CMD ["node"]
