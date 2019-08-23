@@ -11,7 +11,7 @@ RUN yum install -y wget git sudo \
     && cd /usr/ && git clone https://github.com/YMFE/yapi.git \
     && cd /usr/yapi && npm i -g yarn && yarn \
     && /usr/bin/mongod -f /etc/mongod.conf && cd /usr/yapi/ && node server/install.js \
-    && sudo chmod 777 /usr/entrypoint.sh &&  yum clean all
+    && sudo chmod 777 /usr/entrypoint.sh &&  yum clean all && yarn cache clean
 
 EXPOSE 27017
 EXPOSE 3000
