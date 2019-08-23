@@ -1,11 +1,2 @@
 #!/usr/bin/env bash
-
-# yapi初始化后会有一个init.lock文件
-lockPath="/my-yapi/init.lock"
-
-if [ ! -f "$lockPath" ]
-then
-    yapi server
-else
-    yapi server
-fi
+/usr/bin/mongod -f /etc/mongod.conf && node /usr/download/yapi/server/app.js
