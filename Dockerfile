@@ -1,9 +1,9 @@
 FROM centos:centos7
 MAINTAINER 754060604@qq.com
 
-COPY mongodb-org-4.2.repo
-    config.json
-    entrypoint.sh
+COPY mongodb-org-4.2.repo \
+    config.json \
+    entrypoint.sh \
     /usr/
 
 RUN cp /usr/mongodb-org-4.2.repo /etc/yum.repos.d/ && yum install -y wget git sudo \
