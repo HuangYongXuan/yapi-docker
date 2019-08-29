@@ -12,7 +12,8 @@ RUN cp /usr/mongodb-org-4.2.repo /etc/yum.repos.d/ && yum install -y wget git su
     && cd /usr/ && git clone https://github.com/YMFE/yapi.git \
     && cd /usr/yapi && npm i -g yarn && yarn install --production \
     && /usr/bin/mongod -f /etc/mongod.conf && cd /usr/yapi/ && node server/install.js \
-    && sudo chmod 777 /usr/entrypoint.sh &&  yum clean all && yarn cache clean && npm cache clean -f
+    && sudo chmod 777 /usr/entrypoint.sh &&  yum clean all && yarn cache clean && npm cache clean -f \
+    && yum remove -y wget git sudo
 
 EXPOSE 27017
 EXPOSE 3000
